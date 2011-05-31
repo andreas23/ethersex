@@ -63,14 +63,14 @@ int16_t parse_cmd_brew_hist_command(char *cmd, char *output, uint16_t len)
   return brew_history(cmd,output,len);
 }
 
-int16_t parse_cmd_app_sample_init(char *cmd, char *output, uint16_t len) 
+int16_t parse_cmd_brewtronic_init(char *cmd, char *output, uint16_t len) 
 {
-  return app_sample_init();
+  return brewtronic_init();
 }
 
-int16_t parse_cmd_app_sample_periodic(char *cmd, char *output, uint16_t len) 
+int16_t parse_cmd_brewtronic_periodic(char *cmd, char *output, uint16_t len) 
 {
-  return app_sample_periodic();
+  return brewtronic_periodic();
 }
 
 int16_t parse_cmd_brew_start_command(char *cmd, char *output, uint16_t len) 
