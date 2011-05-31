@@ -19,8 +19,8 @@
  * http://www.gnu.org/copyleft/gpl.html
  */
 
-#ifndef HAVE_APPSAMPLE_H
-#define HAVE_APPSAMPLE_H
+#ifndef HAVE_BREWTRONIC_H
+#define HAVE_BREWTRONIC_H
 
 int16_t
 brew_set(uint8_t step, uint8_t temp, uint8_t mins);
@@ -38,11 +38,11 @@ app_sample_periodic(void);
 
 
 #include "config.h"
-#ifdef DEBUG_APP_SAMPLE
+#ifdef DEBUG_BREWTRONIC
 # include "core/debug.h"
-# define APPSAMPLEDEBUG(a...)  debug_printf("app sample: " a)
+# define BREWTRONICDEBUG(a...)  debug_printf("app sample: " a)
 #else
-# define APPSAMPLEDEBUG(a...)
+# define BREWTRONICDEBUG(a...)
 #endif
 
-#endif  /* HAVE_APPSAMPLE_H */
+#endif  /* HAVE_BREWTRONIC_H */

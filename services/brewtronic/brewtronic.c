@@ -21,7 +21,7 @@
 #include <string.h>
 
 #include "config.h"
-#include "appsample.h"
+#include "brewtronic.h"
 
 #include "protocols/ecmd/ecmd-base.h"
 
@@ -146,10 +146,10 @@ void set_progress (int16_t percent)  {
 
 uint8_t boot_wait ;
 int16_t
-app_sample_init(void)
+brewtronic_init(void)
 {
   boot_wait = 10;
-  APPSAMPLEDEBUG ("init\n");
+  BREWTRONICDEBUG ("init\n");
   int16_t ret;
   hist_saved=0;
   hist_cnt=0;
@@ -199,7 +199,7 @@ void BlueLed(char on)
  uint8_t release_time = 0;
  uint8_t beep_time = 0;
 int16_t
-app_sample_periodic(void)
+brewtronic_periodic(void)
 {
   uint8_t i;
   int16_t ret;
@@ -324,7 +324,7 @@ app_sample_periodic(void)
 //
 int16_t
 brew_start(uint8_t start_stop) {
-  APPSAMPLEDEBUG ("set\n");
+  BREWTRONICDEBUG ("set\n");
   if (start_stop == 0) {
     start_proc = 1;
   } else {
@@ -346,7 +346,7 @@ brew_temp(char *cmd, char *output, uint16_t len) {
 
 int16_t
 brew_set(uint8_t step, uint8_t temp, uint8_t mins) {
-  APPSAMPLEDEBUG ("set\n");
+  BREWTRONICDEBUG ("set\n");
   wprintw(upper,"Set %d",step);
   if (step < MAX_BREW) {
     rast_zeit[step] = mins;
@@ -357,7 +357,7 @@ brew_set(uint8_t step, uint8_t temp, uint8_t mins) {
 
 int16_t
 brew_save(char *cmd, char *output, uint16_t len){
-  APPSAMPLEDEBUG ("save\n");
+  BREWTRONICDEBUG ("save\n");
   wprintw(upper,"Save");
    BlueLed(1);
   eeprom_save(rast_temp_ee,rast_temp,MAX_BREW);
@@ -370,7 +370,7 @@ brew_save(char *cmd, char *output, uint16_t len){
 
 int16_t
 brew_restore(char *cmd, char *output, uint16_t len){
-  APPSAMPLEDEBUG ("restore\n");
+  BREWTRONICDEBUG ("restore\n");
   wprintw(upper,"Restore");
   eeprom_restore(rast_temp_ee,rast_temp,MAX_BREW);
   eeprom_restore(rast_zeit_ee,rast_zeit,MAX_BREW);
@@ -394,7 +394,7 @@ brew_history(char *cmd, char *output, uint16_t len) {
 
 /*
   -- Ethersex META --
-  header(services/appsample/appsample.h)
-  ifdef(`conf_APP_SAMPLE_INIT_AUTOSTART',`init(app_sample_init)')
-  ifdef(`conf_APP_SAMPLE_PERIODIC_AUTOSTART',`timer(2,app_sample_periodic())')
+  header(services/brewtronic/brewtronic.h)
+  ifdef(`conf_BREWTRONIC_INIT_AUTOSTART',`init(brewtronic_init)')
+  ifdef(`conf_BREWTRONIC_PERIODIC_AUTOSTART',`timer(2,brewtronic_periodic())')
 */
