@@ -97,6 +97,7 @@ SUBDIRS += services/stella
 SUBDIRS += services/tftp
 SUBDIRS += services/upnp
 SUBDIRS += services/appsample
+SUBDIRS += services/brewtronic
 SUBDIRS += services/watchcat
 SUBDIRS += services/vnc
 SUBDIRS += services/watchasync
