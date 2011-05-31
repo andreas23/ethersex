@@ -172,7 +172,7 @@ brewtronic_init(void)
   /* disable interrupts */
   uint8_t sreg = SREG;
   cli();
-  ret = ow_search_rom_first();
+  ret = ow_search_rom_first(ONEWIRE_BUSMASK);
   /* re-enable interrupts */
   SREG = sreg;
 
