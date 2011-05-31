@@ -136,6 +136,11 @@ eeprom_init (void)
 #ifdef MOTD_SUPPORT
 	eeprom_save_P(motd_text, PSTR(CONF_MOTD_DEFAULT), MOTD_VALUESIZE);
 #endif
+
+#ifdef BREWTRONIC_SUPPORT
+	// TODO: implement reasonable EEPROM init code
+#endif
+
     eeprom_update_chksum();
 }
 

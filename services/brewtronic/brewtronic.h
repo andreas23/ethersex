@@ -35,7 +35,8 @@ app_sample_init(void);
 int16_t
 app_sample_periodic(void);
 
-
+#define MAX_BREW 20
+#define MAX_HIST 200
 
 #include "config.h"
 #ifdef DEBUG_BREWTRONIC

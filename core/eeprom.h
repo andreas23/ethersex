@@ -49,6 +49,10 @@
 #include "services/motd/motd.h"
 #endif
 
+#ifdef BREWTRONIC_SUPPORT
+#include "services/brewtronic/brewtronic.h"
+#endif
+
 struct eeprom_config_t {
 #ifdef ETHERNET_SUPPORT
     uint8_t mac[6];
@@ -102,6 +106,13 @@ struct eeprom_config_t {
 
 #ifdef MOTD_SUPPORT
 	char motd_text[MOTD_VALUESIZE];
+#endif
+
+// TODO: change size constant names to match overal naming scheme
+#ifdef BREWTRONIC_SUPPORT
+	uint8_t rast_temp_ee[MAX_BREW];
+	uint8_t rast_zeit_ee[MAX_BREW];
+	uint8_t t_hist_ee[MAX_HIST];
 #endif
 
     uint8_t crc;

@@ -28,7 +28,7 @@
 #include <util/delay.h>
 
 #include "config.h"
-#include "appsample.h"
+#include "brewtronic.h"
 #include "protocols/ecmd/ecmd-base.h"
 
 int16_t parse_cmd_brew_set_command(char *cmd, char *output, uint16_t len) 
@@ -87,13 +87,13 @@ int16_t parse_cmd_brew_start_command(char *cmd, char *output, uint16_t len)
 
 /*
 -- Ethersex META --
-block([[Application_Sample]])
+block([[Brewtronic]])
 ecmd_feature(brew_set_command, "brewset",[step] [temp] [time], Set rast)
 ecmd_feature(brew_restore_command, "brewrest",, restore)
 ecmd_feature(brew_save_command, "brewsave",, save)
 ecmd_feature(brew_start_command, "brewstart",, save)
 ecmd_feature(brew_temp_command, "brewtemp",, save)
 ecmd_feature(brew_hist_command, "brewhist",, save)
-ecmd_feature(app_sample_init, "brewinit",, Manually call application sample init method)
-ecmd_feature(app_sample_periodic, "brewperiodic",, Manually call application sample periodic method)
+ecmd_feature(brewtronic_init, "brewinit",, Manually call application sample init method)
+ecmd_feature(brewtronic_periodic, "brewperiodic",, Manually call application sample periodic method)
 */

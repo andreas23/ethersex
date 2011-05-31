@@ -1,8 +1,8 @@
 TOPDIR ?= ../..
 include $(TOPDIR)/.config
 
-$(APP_SAMPLE_SUPPORT)_SRC += services/brewtronic/brewtronic.c
-$(APP_SAMPLE_SUPPORT)_ECMD_SRC += services/brewtronic/ecmd.c
+$(BREWTRONIC_SUPPORT)_SRC += services/brewtronic/brewtronic.c
+$(BREWTRONIC_SUPPORT)_ECMD_SRC += services/brewtronic/ecmd.c
 
 ##############################################################################
 # generic fluff
