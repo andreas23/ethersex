@@ -28,12 +28,23 @@ int16_t
 brew_save(char *cmd, char *output, uint16_t len);
 int16_t
 brew_restore(char *cmd, char *output, uint16_t len);
+int16_t
+brew_start(uint8_t start_stop);
+int16_t
+brew_temp(char *cmd, char *output, uint16_t len);
+int16_t
+brew_save(char *cmd, char *output, uint16_t len);
+int16_t
+brew_restore(char *cmd, char *output, uint16_t len);
+int16_t
+brew_history(char *cmd, char *output, uint16_t len);
+
 
 int16_t
-app_sample_init(void);
+brewtronic_init(void);
 
 int16_t
-app_sample_periodic(void);
+brewtronic_periodic(void);
 
 #define MAX_BREW 20
 #define MAX_HIST 200
